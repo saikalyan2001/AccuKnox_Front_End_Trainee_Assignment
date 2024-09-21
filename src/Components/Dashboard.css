@@ -1,0 +1,534 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  color: blue;
+  font-size: 25px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.close:hover {
+  color: #f00;
+  background-color: #0056b3;
+}
+
+.chart-data-content {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: left;
+  max-width: 150px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.chart-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.color-box {
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  display: inline-block;
+}
+
+.manage-categories-btn {
+  position: absolute;
+  top: 15px;
+  right: 450px;
+}
+
+.dashboard-container {
+  position: relative;
+  padding: 20px;
+  background-color: rgb(197, 219, 226);
+  margin: 0 auto;
+}
+
+/* Start Add widget Button */
+.add-widget-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.add-widget-btn:hover {
+  background-color: #45a049;
+}
+
+.add-icon {
+  font-size: 20px;
+}
+
+/* End Add widget Button */
+
+/* Start search bar */
+
+.search-bar {
+  position: absolute;
+  top: 15px;
+  right: 200px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: white;
+  width: 200px;
+  height: 30px;
+}
+
+.search-icon {
+  font-size: 20px;
+  color: #888;
+  margin-right: 8px;
+}
+
+input {
+  border: none !important;
+  outline: none !important;
+  flex: 1;
+  padding: 8px 10px;
+  font-size: 16px;
+  height: 30px;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+input:focus {
+  border: none;
+}
+
+/* End search bar */
+
+/* Start Add Widget button form */
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  color: blue;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #f00;
+}
+
+.submit-widget-btn {
+  background-color: green;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+.submit-widget-btn:hover {
+  background-color: rgb(5, 70, 5);
+}
+
+.close-widget-btn {
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.close-widget-btn:hover {
+  background-color: rgb(156, 7, 7);
+}
+
+/* End Add Widget button form */
+
+/* Start add category button */
+
+.add-category-btn {
+  background-color: orangered;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.add-category-btn:hover {
+  background-color: rgb(180, 50, 3);
+}
+
+.remove-category-btn {
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.remove-category-btn:hover {
+  background-color: rgb(156, 7, 7);
+}
+/* End add category button */
+
+/* Show modal */
+.modal-background.show {
+  display: flex;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Input and select styles */
+input[type="text"],
+select {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+select {
+  height: auto;
+}
+
+.widget-list {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.widget-item {
+  padding: 40px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  position: relative;
+}
+
+.chart-content {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.chart-container {
+  width: 180px;
+  margin-bottom: 40px;
+  margin-right: 20px;
+}
+
+.chart-total {
+  position: absolute;
+  bottom: 20px;
+  left: 90px;
+  background-color: rgba(134, 129, 129, 0.185);
+  padding: 6px;
+  border-radius: 3px;
+  box-shadow: 5px 5px 8x rgba(0, 0, 0, 0.2);
+}
+
+.chart-data-content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  margin-left: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  word-wrap: break-word;
+  white-space: nowrap;
+  overflow-wrap: break-word;
+}
+
+.remove-widget-btn {
+  background: none;
+  border: none;
+  color: #f44336;
+  font-size: 1.5em;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0;
+}
+
+/* Responsiveness */
+
+@media screen and (max-width: 1024px) {
+  .search-bar {
+    width: 160px;
+    right: 150px;
+  }
+
+  .add-widget-btn {
+    right: 20px;
+  }
+
+  .manage-categories-btn {
+    right: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .categories-container {
+    margin-top: 200px;
+  }
+
+  .dashboard-container {
+    padding: 10px;
+  }
+
+  .search-bar {
+    width: 140px;
+    right: 50px;
+  }
+
+  .add-widget-btn {
+    right: 10px;
+    padding: 5px 10px;
+  }
+
+  .widget-list {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    width: 80%;
+  }
+
+  .chart-container {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search-bar {
+    width: 100px;
+    right: 10px;
+  }
+
+  .add-widget-btn {
+    right: 10px;
+    padding: 5px;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+}
+
+/* Adjust Manage Categories Button for smaller screens */
+@media screen and (max-width: 768px) {
+  .manage-categories-btn {
+    top: 10px;
+    right: 20px;
+    font-size: 14px;
+    padding: 8px 12px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .manage-categories-btn {
+    right: 10px;
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-bottom: 30px;
+  }
+}
+
+/* Adjust Add Widget Button for smaller screens */
+@media screen and (max-width: 768px) {
+  .add-widget-btn {
+    top: 10px;
+    right: 15px;
+    font-size: 14px;
+    padding: 8px 12px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .add-widget-btn {
+    right: 10px;
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+/* Adjust Search Bar for smaller screens */
+@media screen and (max-width: 768px) {
+  .search-bar {
+    width: 200px;
+    right: 30px;
+  }
+
+  .search-icon {
+    font-size: 18px;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search-bar {
+    width: 200px;
+    right: 10px;
+  }
+
+  .search-icon {
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+}
+
+/* Stack buttons vertically on smaller screens */
+@media screen and (max-width: 768px) {
+  .manage-categories-btn {
+    top: 80px;
+    left: 10px;
+    margin-bottom: 10px;
+    width: 140px;
+    margin: 0 auto;
+  }
+
+  .add-widget-btn {
+    top: 150px;
+    left: 10px;
+    width: 140px;
+    margin-top: 20px;
+    margin: 30px auto;
+  }
+
+  .search-bar {
+    top: 120px;
+    left: 10px;
+    width: 140px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .manage-categories-btn {
+    right: 10px;
+    margin-bottom: 30px;
+  }
+
+  .add-widget-btn {
+    right: 10px;
+    margin-bottom: 30px;
+  }
+
+  .search-bar {
+    right: 10px;
+    width: 150px;
+    margin-bottom: 30px;
+  }
+}

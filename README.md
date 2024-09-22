@@ -23,10 +23,10 @@
 **Project Development :**
 
   + Folder Structure:  Set up the folder structure for better project organization.
-           1.	Data File Creation: Created a **Data.json** file in the **public/Data/** directory.
-           2.	The file contains categories, with each category holding multiple widgets.
-           3.	Component Setup: Created a  **Components** folder within the **src** directory. Added a **Dashboard** component to manage widgets.
-           4.	Widget Management:   Added a button to create widgets based on the selected chart and category. Each widget has a cross icon for removal.
-           5.	Category Management: Implemented a **Manage Categories** button for adding or deleting categories.
-           6.	Search Functionality:  Created a search bar to search for widgets within categories.
+           1.  Data File Creation: Created a **Data.json** file in the **public/Data/** directory.
+           2.  The file contains categories, with each category holding multiple widgets.
+           3.	 Component Setup: Created a  **Components** folder within the **src** directory. Added a **Dashboard** component to manage widgets.
+           4.	 Widget Management:   Added a button to create widgets based on the selected chart and category. Each widget has a cross icon for removal.
+           5.	 Category Management: Implemented a **Manage Categories** button for adding or deleting categories.
+           6.	 Search Functionality:  Created a search bar to search for widgets within categories.
 

@@ -29,4 +29,6 @@
     4.  Widget Management:   Added a button to create widgets based on the selected chart and category. Each widget has a cross icon for removal.
     5.  Category Management: Implemented a **Manage Categories** button for adding or deleting categories.
     6.  Search Functionality:  Created a search bar to search for widgets within categories.
+   
+  [Link for the website](https://accuknox-cnapp-dashboard.netlify.app/)
 

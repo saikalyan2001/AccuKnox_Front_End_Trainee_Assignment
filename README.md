@@ -7,13 +7,13 @@
    + For faster and more efficient project setup, I used the "Vite" tool.
      
        **creation steps :**
-                        1.	Run "npm create vite@latest"
-                        2.	Project Name:  "CNAPP-DASHBOARD"
-                        3.	Framework Selection:  "React"
-                        4.	Variant Selection:   "JavaScript"
-                        5.	Navigate to the Project Directory:   "cd CNAPP-DASHBOARD"
-                        6.	Install Project Dependencies:  "npm install"
-                        7.	Start the Project:  "npm run dev"
+       1.	Run "npm create vite@latest"
+       2.	Project Name:  **CNAPP-DASHBOARD**
+       3.	Framework Selection:  **React**
+       4.	Variant Selection:   **JavaScript**
+       5.	Navigate to the Project Directory:   **cd CNAPP-DASHBOARD**
+       6.	Install Project Dependencies:  **npm install**
+       7.	Start the Project:  **npm run dev**
      
 
 **Installing Required Packages :**
